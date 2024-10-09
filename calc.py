@@ -126,9 +126,10 @@ sphere_volume_df = pd.DataFrame(data={"Küre Kumpas Hacim": sphere_caliper_volum
 print(sphere_volume_df)
 
 # 6. Verileri excel dosyasına çevirme
-
-mean_df.to_excel("./mean.xlsx", index=False)
-absolute_error_dataframe.to_excel("./absolute_error.xlsx", index=False)
-relative_error_dataframe.to_excel("./relative_error.xlsx", index=False)
-std_df.to_excel("./standard_deviation.xlsx", index=False)
-sphere_volume_df.to_excel("./sphere_volume.xlsx", index=False)
+if __name__ == "__main__":
+    
+    mean_df.to_excel("./mean.xlsx", index=False)
+    absolute_error_dataframe.to_excel("./absolute_error.xlsx", index=False)
+    relative_error_dataframe.to_excel("./relative_error.xlsx", index=False)
+    std_df.to_excel("./standard_deviation.xlsx", index=False)
+    sphere_volume_df.to_excel("./sphere_volume.xlsx", index=False)
