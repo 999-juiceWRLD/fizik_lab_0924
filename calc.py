@@ -18,7 +18,6 @@ mean_df = pd.DataFrame(data={"Cube Ruler Mean": cube_mean,
                              "Sphere Caliper Mean": sphere_caliper_mean,
                              "Sphere Micrometer Mean": sphere_micrometer_mean},
                        index=[1]) # print only once
-print(mean_df)
 
 # 2. Mutlak Hata
 
@@ -82,8 +81,6 @@ relative_error_dataframe = pd.DataFrame(data={
     "Küre Mikrometre Bağıl Hata": sphere_micrometer_relative_error_padded
 })
 
-print(absolute_error_dataframe)
-print(relative_error_dataframe)
 
 # 4. Standart Sapma
 
@@ -101,7 +98,6 @@ std_df = pd.DataFrame(data={"Küp Std": cube_std,
                              "Küre Kumpas Std": sphere_caliper_std,
                              "Küre Mikrometre Std": sphere_micrometer_std},
                        index=[1]) # print only once
-print(std_df)
 
 # print(np.std(cube_ruler))
 # print(np.std(sphere_caliper))
@@ -123,10 +119,15 @@ sphere_micrometer_volume_padded = pad_data(sphere_micrometer_volume, volume_max,
 sphere_volume_df = pd.DataFrame(data={"Küre Kumpas Hacim": sphere_caliper_volume_padded,
                                       "Küre Mikrometre Hacim": sphere_micrometer_volume_padded})
 
-print(sphere_volume_df)
 
 # 6. Verileri excel dosyasına çevirme
 if __name__ == "__main__":
+    
+    print(mean_df)
+    print(absolute_error_dataframe)
+    print(relative_error_dataframe)
+    print(std_df)
+    print(sphere_volume_df)
     
     mean_df.to_excel("./mean.xlsx", index=False)
     absolute_error_dataframe.to_excel("./absolute_error.xlsx", index=False)
